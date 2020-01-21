@@ -11,6 +11,12 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("boaz")) {
             return "This is not the summer of 69. It's just 69.";
         }
+	if(query.toLowerCase().contains("largest") && query.toLowerCase().contains("number")) {
+		String[] parts = query.toLower().split(':');
+		String[] parts2 = parts[1].split(',');
+		int max = parts2.stream().map(Integer::valueOf).max(Integer::compare).get();
+		return max.toString();
+	}	
         return "";
     }
 }
