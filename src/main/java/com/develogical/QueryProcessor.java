@@ -31,7 +31,7 @@ public class QueryProcessor {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://shashwat-pritesh.herokuapp.com/api" + query))
+                .uri(URI.create("https://shashwat-pritesh.herokuapp.com/api?q=" + query))
                 .build();
 
             HttpResponse<String> response = client.send(request,
