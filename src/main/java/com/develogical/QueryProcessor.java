@@ -37,7 +37,7 @@ public class QueryProcessor {
             HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
 
-            return response.body(); }
+            return response.body().trim(); }
         catch(Exception e) {
             return "";
         }
